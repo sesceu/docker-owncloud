@@ -5,7 +5,9 @@ RUN apt-get update && apt-get install -y \
         cron \
         && rm -rf /var/lib/apt/lists/* \
         && update-rc.d cron defaults \
-        && php5enmod imap
+        && php5enmod imap \
+        && mkdir -p /etc/php5/apache2/conf.d/ \
+        && ln -s /etc/php5/mods-available/imap.ini /etc/php5/apache2/conf.d/20-imap.ini 
 
 
 RUN echo "SHELL=/bin/bash" >> /etc/cron.d/owncloud-cron \
