@@ -4,7 +4,9 @@ RUN apt-get update && apt-get install -y \
         php5-imap \
         cron \
         && rm -rf /var/lib/apt/lists/* \
-        && update-rc.d cron defaults
+        && update-rc.d cron defaults \
+        && php5enmod imap
+
 
 RUN echo "SHELL=/bin/bash" >> /etc/cron.d/owncloud-cron \
     && echo "PATH=/usr/local/bin:/usr/bin:/bin" >> /etc/cron.d/owncloud-cron \
