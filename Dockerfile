@@ -15,7 +15,7 @@ RUN echo "SHELL=/bin/bash" >> /etc/cron.d/owncloud-cron \
     && echo "*/15	*	*	*	*	www-data	php -f /var/www/html/cron.php > /dev/null 2>&1" >> /etc/cron.d/owncloud-cron
 
 # install php5-imap
-RUN docker-php5-ext-install imap \
-    && docker-php5-ext-enable imap
+RUN docker-php-ext-install imap \
+    && docker-php-ext-enable imap
 
 CMD /etc/init.d/cron start; apache2-foreground
