@@ -4,6 +4,7 @@ MAINTAINER Sebastian Schneider <mail@sesc.eu>
 # install cron
 RUN apt-get update && apt-get install -y \
         cron \
+        libc-client2007e-dev \
         && rm -rf /var/lib/apt/lists/* \
         && update-rc.d cron defaults 
 
