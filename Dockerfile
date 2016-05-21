@@ -5,6 +5,7 @@ MAINTAINER Sebastian Schneider <mail@sesc.eu>
 RUN apt-get update && apt-get install -y \
         cron \
         libc-client2007e-dev \
+        libkrb5-dev \
         && rm -rf /var/lib/apt/lists/* \
         && update-rc.d cron defaults 
 
