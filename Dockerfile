@@ -1,4 +1,4 @@
-FROM owncloud:9
+FROM owncloud:10
 MAINTAINER Sebastian Schneider <mail@sesc.eu>
 
 # install cron
